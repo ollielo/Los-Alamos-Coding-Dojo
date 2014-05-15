@@ -29,19 +29,19 @@ mode        : selfcontained # {standalone, draft}
 
 ## 5W - 1H
 
->- What
+* What
   - A place for <span class='bold'>good</span> programmer to become **great**
->- How
+* How
   - By showing to and looking at other programmers practicing Kata (with TDD).
->- Why
-  - We seldom get the chance to how other programmer work.
+* Why
+  - We seldom get the chance to see how other programmers work.
   - I learned something watching workers rebuilding the Aspen school the other
   day.
->- Who
+* Who
   - Anyone interested in showing how he/she codes and watching others doing so.
->- Where
+* Where
   - Los Alamos Mesa Public Library, conference room 3.
->- When
+* When
  - Every third Thursday, 6:30 PM - 8:30 PM.
 
 ---
@@ -106,5 +106,5 @@ mode        : selfcontained # {standalone, draft}
     * Short answer: I don't know. How about try it all over again?
     * Long answer: We can collectively make some decisions at that time.
 * Can I bring my kid(s) here?
-    * Yes, if if you are comfortable showing your code to your kid(s).
+    * Yes, if you are comfortable showing your code to your kid(s).
     * And they are comfortable showing his/hers.
