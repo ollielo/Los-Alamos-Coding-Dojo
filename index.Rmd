@@ -1,0 +1,110 @@
+---
+title       : Los Alamos Coding Dojo
+subtitle    : Where good programmers become great
+author      : Li-Ta Lo
+job         : 
+framework   : deckjs        # {io2012, html5slides, shower, dzslides, ...}
+deckjs:
+  theme       : web-2.0
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : solarized_light       # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+
+---
+
+## Los Alamos Coding Dojo
+
+---
+
+## Welcome
+
+* Thanks a lot for <b>your</b> interest and time.
+
+* I know how busy your life is.
+
+* We need more social and professional groups.
+
+---
+
+## 5W - 1H
+
+>- What
+  - A place for <span class='bold'>good</span> programmer to become **great**
+>- How
+  - By showing to and looking at other programmers practicing Kata (with TDD).
+>- Why
+  - We seldom get the chance to how other programmer work.
+  - I learned something watching workers rebuilding the Aspen school the other
+  day.
+>- Who
+  - Anyone interested in showing how he/she codes and watching others doing so.
+>- Where
+  - Los Alamos Mesa Public Library, conference room 3.
+>- When
+ - Every third Thursday, 6:30 PM - 8:30 PM.
+
+---
+
+## No-Nos
+
+* Criticizing other people without giving something constructive.
+  * Show us your alternative solution/code.
+  * With proper test cases to ensure certain level of correctness.
+* Your official business
+  * Your off-hour time is too valuable to work on it.
+  * I DON'T want to (and CAN'T) see it.
+
+---
+
+## What's In It for Me?
+
+* Source of Happiness
+  * Autonomy
+      * It is your decision to join us and do a Kata, no one forces you to
+      do so.
+  * Mastery
+      * By doing these Katas, you will have a sense of mastery of writing
+      clean, testable and tested code. These skills are readily usable in
+      your professional life.
+  * Relatedness
+      * Showing and seeing other people coding lets you communicating with
+      them at a higher but concrete level. Trust me, it is better than
+      [censored]!!!
+
+---
+
+## My Flavor of TDD
+
+* Test driven development is not comprehensive testing.
+* Red-Green-Refactor Cycle
+  * <span class = 'red'>Write a test that fails</span>
+      * Write the assertion part first
+      * Write supporting code in the test
+  * <span class = 'green'>Write a simple production code to pass the test</span>
+      * It can be an ugly solution
+  * Refactoring and clean up
+
+---
+
+## My Flavor of TDD - Cont'd
+
+* Pomodoro Technique
+    * for i in 1..4 do
+        * Work for 25 minutes
+        * Break for 5 minutes
+    * Long break on failing test
+        * This reminds where we left next time
+* Root of all evil
+    * No prematured optimization
+
+---
+
+## Frequently Asked Questions
+
+* What do we do after we've gone through all the Katas?
+    * Short answer: I don't know. How about try it all over again?
+    * Long answer: We can collectively make some decisions at that time.
+* Can I bring my kid(s) here?
+    * Yes, if if you are comfortable showing your code to your kid(s).
+    * And they are comfortable showing his/hers.
