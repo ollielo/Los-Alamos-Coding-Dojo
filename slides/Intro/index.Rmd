@@ -19,7 +19,7 @@ mode        : selfcontained # {standalone, draft}
 
 ## Welcome
 
-* Thanks a lot for <b>your</b> interest and time.
+* Thanks a lot for your interest and time.
 
 * I know how busy your life is.
 
@@ -30,7 +30,7 @@ mode        : selfcontained # {standalone, draft}
 ## 5W - 1H
 
 * What
-  - A place for <span class='bold'>good</span> programmer to become **great**
+  - A place for *good* programmer to become **great**
 * How
   - By showing to and looking at other programmers practicing Kata (with TDD).
 * Why
