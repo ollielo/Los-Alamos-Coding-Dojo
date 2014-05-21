@@ -1,0 +1,95 @@
+---
+title       : Prime Factors Kata
+subtitle    : 
+author      : Li-Ta Lo
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+---
+
+## Prime Factors Kata
+
+* Elementary school math
+    * Factorize a positive number into its prime factors
+* Examples
+    * `2 -> [2]`
+    * `3 -> [3]`
+    * `4 -> [2, 2]`
+    * `6 -> [2, 3]`
+    * `9 -> [3, 3]`
+    * `12 -> [2, 2, 3]`
+    * `15 -> [3, 5]`
+
+---
+
+## The Challenges
+
+* It is very easy but can you
+    * Do it in some IDE you are not familiar with?
+    * Do it in some new programming language?
+    * Do it in TDD fashion?
+    * Do it in front of other people?
+
+---
+
+## Live Coding in Scala
+
+* Why Scala?
+    * Hot language for the big data companies
+    * Functional programming for the JVM
+    * Adequate but not perfect support by Eclipse Scala plugin
+* Test driven development
+    * Example based tests with Scalatest
+    * Property based tests with ScalaCheck
+* Functional programming
+    * Mutability v.s. immutability
+    * Iteration v.s. recursion
+    * Locally defined functions
+
+---
+
+## Everybody is Kun-Fu Fighting
+
+---
+
+## Property-based Testing
+
+>- Our problem and solution has some simple mathematical property
+    * Multiplying the output should give us the input back
+    * Each element of the output is a prime
+    * There is a finite space for `Int`
+>- Can we have comprehensive tests based on these properties?
+    * Possible?
+    * Practical?
+>- Random subsampling with ScalaCheck
+
+---
+
+## Surprise, surprise
+
+* Prime factorization is not as easy as you might think
+* Deep computer science problem
+* Implication to the completeness of tests?
+
+---
+
+## Retrospectives
+
+* What did you learn?
+* What do you like most?
+* What do you hate most?
+
+---
+
+## Volunteer Next Time?
+
+<style>
+em {
+    font-family: cursive
+}
+</style>
+
+>- Free copy of _The Coding DoJo Handbook_.
