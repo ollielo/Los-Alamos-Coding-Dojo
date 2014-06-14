@@ -1,0 +1,251 @@
+---
+title       : Prime Factors Kata
+subtitle    : Step-by-Step Walk Through
+author      : Li-Ta Lo
+job         : 
+framework   : deckjs        # {io2012, html5slides, shower, dzslides, ...}
+deckjs      :
+    theme   : web-2.0
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : solarized_light # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+
+---
+
+## Prime Factors Kata in Scala
+
+#### A Step-by-step Walk Through
+
+---
+
+## Setting up Eclipse Scala IDE
+
+* Open Scala Perspective
+* Create a new Scala project called `PrimeFactors`
+* Add the Scalatest jar file to the build path
+* Create a package called `main.scala.PrimeFactors` for production code
+* Create a package called `test.scala.PrimeFactors` for unit tests
+* Add a new Scala class `UnitSuite` in `test.scala.PrimeFactors` as a
+  subclass of Scalatest's `FunSuite`.
+
+```scala
+package test.scala.PrimeFactors
+
+import org.scalatest.FunSuite
+
+class UnitSuite extends FunSuite
+```
+
+---
+
+## Test the Testing Framework
+
+* Add our test suite `PrimeFactorsSuite`, our unit tests will be methods of this
+  class.
+
+```scala
+package test.scala.PrimeFactors
+
+class PrimeFactorsSuite extends UnitSuite {
+
+}
+```
+
+* Add a failing test by calling `fail()` to make sure our building and testing
+  infrastructures work as expected.
+
+```scala
+class PrimeFactorsSuite extends UnitSuite {
+  test("A failing test") {
+    fail("It DOES fail!!!")
+  }
+}
+```
+
+* Run the test suite by _Run As Scala Test Suite_
+
+---
+
+## The First Test
+
+* What is the simplest test case we can think of?
+* How about the fact that 1 does not have any prime factor?
+* When we write down our test, we are designing the external API of our
+  production code, _from the users' point of view_.
+* Here we made the design decision that `PrimeFactor()` takes an `Int` and
+  returns a `List[Int]`.
+
+```scala
+package test.scala.PrimeFactors
+
+class PrimeFactorsSuite extends UnitSuite {
+  test("1 does not have any prime factor") {
+    assertResult(Nil)(PrimeFactors(1))
+  }
+}
+```
+
+---
+
+## The First Test
+
+* It __does not compile__ since we haven't defined `PrimeFactors()` yet.
+* In Scala, everything is an object. A function is just an object with `apply()`.
+* Add a Scala object `PrimeFactors`. Following the hint given by our test, we can 
+easily come up with the signature of `apply()`.
+* Give the method the simplest implementation we can think of.
+
+```scala
+package main.scala.PrimeFactors
+
+object PrimeFactors {
+  def apply(n: Int): List[Int] = Nil
+}
+```
+
+* Run the test, it passes.
+
+---
+
+## The Second Test
+
+* Read the problem statements carefully, does it say _positive_ integer?
+* We normally don't worry about validating input when doing Kata.
+* It does not hurt to learn how to deal with invalid input in Scala anyway.
+* Write a test on invalid inputs like 0 or -4.
+* Again, we are _designing_ the API when writing our tests.
+* We made the decision to raise `IllegalArgumentException` when `PrimerFactors()`
+is given an invalid input.
+
+```scala
+class PrimeFactorsSuite extends UnitSuite {
+  ...
+  test("negative numbers are not valid inputs") {
+    intercept[IllegalArgumentException] {
+      PrimeFactors(-4)
+    }
+  }
+  ...
+}
+```
+
+---
+
+## The Second Test
+
+* Run the test, it failed since we did not validate our input.
+* The error message also told us which, why and where the test failed.
+
+```
+Run starting. Expected test count is: 2
+PrimeFactorsSuite:
+- negative numbers are not valid input *** FAILED ***
+  Expected exception java.lang.IllegalArgumentException to be thrown, but no
+  exception was thrown. (PrimeFactorsSuite.scala:7)
+- 1 does not have any prime factor
+Run completed in 950 milliseconds.
+Total number of tests run: 2
+Suites: completed 1, aborted 0
+Tests: succeeded 1, failed 1, canceled 0, ignored 0, pending 0
+*** 1 TEST FAILED ***
+```
+
+---
+
+## The Second Test
+
+* We can validate the input by using Scala's `require()` at the beginning of our
+function.
+* `require()` throws `IllegalArgumentException` when the Boolean expression
+`n > 0` is `false`.
+
+```scala
+object PrimeFactors {
+  def apply(n: Int): List[Int] = {
+    require(n > 0)
+
+    Nil
+  }
+}
+```
+
+* Run the test suite again, it passes all the tests.
+
+---
+
+## The Third Test
+
+* What's next? How about going through the examples in the _Coding DoJo Handbook_?
+* Add a test on number 2.
+
+```scala
+class PrimeFactorsSuite extends UnitSuite {
+  ...
+  test("2 is its only prime factor") {
+    assertResult(List(2))(PrimeFactors(2))
+  }
+  ...
+}
+```
+
+* Run the test, it failed.
+
+```
+- 2 is its only prime factor *** FAILED ***
+  Expected List(2), but got List() (PrimeFactorsSuite.scala:17)
+```
+
+---
+
+## The Third Test
+
+* The error message is saying that it was expecting `List(2)` but got an
+empty list.
+* The simplest change to the production code to make the test pass is, obviously,
+returning `List(2)` when `n == 2`.
+
+```scala
+object PrimeFactors {
+  def apply(n: Int): List[Int] = {
+    require(n > 0)
+
+    n match {
+      case 1 => Nil
+      case 2 => List(2)
+    }
+  }
+}
+```
+
+* Run the test, it passes.
+
+---
+
+## The Fourth Test
+
+* Add the test on number 3.
+
+```scala
+test("3 is its only prime factor") {
+  assertResult(List(3))(PrimeFactors(3))
+}
+```
+
+* Run the test, it failed.
+* Again, the simplest way to make the test pass is to return `List(3)` when
+`n == 3`.
+
+```scala
+def apply(n: Int): List[Int] = {
+  require(n > 0)
+
+  n match {
+    case 1 => Nil
+    case 2 => List(2)
+    case 3 => List(3)
+  }
+}
+```
+
+* Run the test, it passes.
